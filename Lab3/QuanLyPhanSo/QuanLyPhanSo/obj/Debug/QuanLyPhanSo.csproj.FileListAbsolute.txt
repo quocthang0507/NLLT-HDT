@@ -1,0 +1,18 @@
+D:\La Quoc Thang\QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.exe.config
+D:\La Quoc Thang\QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.csprojResolveAssemblyReference.cache
+D:\La Quoc Thang\QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.exe
+D:\La Quoc Thang\QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.pdb
+D:\La Quoc Thang\QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.exe
+D:\La Quoc Thang\QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.pdb
+E:\OneDrive\Thang\HOC TAP\2017 - 2018\BAI TAP HKII\Nguyên lý lập trình hướng đối tượng\Lab 3\QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.exe.config
+E:\OneDrive\Thang\HOC TAP\2017 - 2018\BAI TAP HKII\Nguyên lý lập trình hướng đối tượng\Lab 3\QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.exe
+E:\OneDrive\Thang\HOC TAP\2017 - 2018\BAI TAP HKII\Nguyên lý lập trình hướng đối tượng\Lab 3\QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.pdb
+E:\OneDrive\Thang\HOC TAP\2017 - 2018\BAI TAP HKII\Nguyên lý lập trình hướng đối tượng\Lab 3\QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.exe
+E:\OneDrive\Thang\HOC TAP\2017 - 2018\BAI TAP HKII\Nguyên lý lập trình hướng đối tượng\Lab 3\QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.pdb
+E:\OneDrive\Thang\HOC TAP\2017 - 2018\BAI TAP HKII\Nguyên lý lập trình hướng đối tượng\Lab 3\QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.csprojResolveAssemblyReference.cache
+D:\1610207_LaQuocThang_QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.exe.config
+D:\1610207_LaQuocThang_QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.exe
+D:\1610207_LaQuocThang_QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.pdb
+D:\1610207_LaQuocThang_QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.exe
+D:\1610207_LaQuocThang_QuanLyPhanSo\QuanLyPhanSo\bin\Debug\QuanLyPhanSo.pdb
+D:\1610207_LaQuocThang_QuanLyPhanSo\QuanLyPhanSo\obj\Debug\QuanLyPhanSo.csprojResolveAssemblyReference.cache

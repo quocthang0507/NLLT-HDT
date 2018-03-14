@@ -1,0 +1,5 @@
+c:\users\administrator\documents\Lab 2\Bai 3\bin\Debug\Bai 3.exe.config
+c:\users\administrator\documents\Lab 2\Bai 3\bin\Debug\Bai 3.exe
+c:\users\administrator\documents\Lab 2\Bai 3\bin\Debug\Bai 3.pdb
+c:\users\administrator\documents\Lab 2\Bai 3\obj\Debug\Bai 3.exe
+c:\users\administrator\documents\Lab 2\Bai 3\obj\Debug\Bai 3.pdb

@@ -1,0 +1,5 @@
+c:\users\administrator\documents\Lab 2\Mang1Chieu_Cu\bin\Debug\Mang1Chieu_Cu.exe.config
+c:\users\administrator\documents\Lab 2\Mang1Chieu_Cu\bin\Debug\Mang1Chieu_Cu.exe
+c:\users\administrator\documents\Lab 2\Mang1Chieu_Cu\bin\Debug\Mang1Chieu_Cu.pdb
+c:\users\administrator\documents\Lab 2\Mang1Chieu_Cu\obj\Debug\Mang1Chieu_Cu.exe
+c:\users\administrator\documents\Lab 2\Mang1Chieu_Cu\obj\Debug\Mang1Chieu_Cu.pdb

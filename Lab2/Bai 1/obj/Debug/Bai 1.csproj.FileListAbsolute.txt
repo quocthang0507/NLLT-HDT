@@ -1,0 +1,6 @@
+c:\users\administrator\documents\Lab 2\Bai 1\bin\Debug\Bai 1.exe.config
+c:\users\administrator\documents\Lab 2\Bai 1\bin\Debug\Bai 1.exe
+c:\users\administrator\documents\Lab 2\Bai 1\bin\Debug\Bai 1.pdb
+c:\users\administrator\documents\Lab 2\Bai 1\obj\Debug\Bai 1.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\Lab 2\Bai 1\obj\Debug\Bai 1.exe
+c:\users\administrator\documents\Lab 2\Bai 1\obj\Debug\Bai 1.pdb
