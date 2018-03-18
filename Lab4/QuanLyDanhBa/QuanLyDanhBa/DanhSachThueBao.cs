@@ -11,6 +11,11 @@ namespace QuanLyDanhBa
 	{
 		public List<ThueBao> DS_TB = new List<ThueBao>();
 
+		public DanhSachThueBao()
+		{
+
+		}
+
 		public void Them_TB(ThueBao x)
 		{
 			DS_TB.Add(x);
@@ -34,9 +39,8 @@ namespace QuanLyDanhBa
 			while ((line = t.ReadLine()) != null)
 			{
 				string[] dt = line.Split(';');
-				Them_TB(new ThueBao(dt[0], dt[1], DateTime.Parse(dt[2])));
+				Them_TB(new ThueBao(dt[0], dt[1], dt[2]));
 			}
-
 		}
 	}
 }

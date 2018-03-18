@@ -11,22 +11,22 @@ namespace QuanLyDanhBa
 		public string CMND;
 		public string soDT;
 		public DateTime ngayDK;
-
 		public ThueBao()
 		{
 
 		}
 
-		public ThueBao(string CMND, string soDT, DateTime ngayDK)
+		public ThueBao(string CMND, string soDT, string ngayDK)
 		{
 			this.CMND = CMND;
 			this.soDT = soDT;
-			this.ngayDK = ngayDK;
+			this.ngayDK = DateTime.Parse(ngayDK);
 		}
 
 		public override string ToString()
 		{
-			return CMND + "\t" + soDT + "\t" + ngayDK;
+			string s = "{0}\t{1}\t{2}";
+			return string.Format(s, CMND, soDT, ngayDK);
 		}
 	}
 }

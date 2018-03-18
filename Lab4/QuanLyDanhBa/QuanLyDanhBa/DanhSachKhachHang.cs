@@ -11,6 +11,11 @@ namespace QuanLyDanhBa
 	{
 		public List<KhachHang> DS_KH = new List<KhachHang>();
 
+		public DanhSachKhachHang()
+		{
+
+		}
+
 		public void Them_KH(KhachHang x)
 		{
 			DS_KH.Add(x);
@@ -34,7 +39,7 @@ namespace QuanLyDanhBa
 			while ((line = t.ReadLine()) != null)
 			{
 				string[] dt = line.Split(';');
-				Them_KH(new KhachHang(dt[0], dt[1], dt[2]));
+				Them_KH(new KhachHang(dt[0], dt[1], dt[2], dt[3] == "Nam" ? GioiTinh.Nam : GioiTinh.Nu, dt[4]));
 			}
 		}
 	}
