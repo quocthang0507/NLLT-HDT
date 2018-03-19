@@ -1,5 +1,4 @@
 39213621;Ly Thi E;143, Long Binh Tan, Bien Hoa, Dong Nai;Nu;1/4/1976
-47907245;Nguyen Tran Anh G;55, Dinh Bo Linh, Cam Ranh, Khanh Hoa;Nam;4/2/1980
 48491247;Vu Ngoc H;18, Ly Thuong Kiet, Phan Rang, Ninh Thuan;Nam;3/12/1987
 55834298;Hoang Van K;13, Long Binh Tan, Bien Hoa, Dong Nai;Nam;4/1/1985
 57459975;Pham Tran M;31, Hai Ba Trung, Cam Ranh, Khanh Hoa;Nam;10/5/1977
