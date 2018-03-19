@@ -57,17 +57,17 @@ namespace QuanLyDanhBa
 		}
 
 		/// <summary>
-		/// Tính tổng số thuê bao mà mỗi người sử dụng
+		/// Tìm danh sách thuê bao mà mỗi người sử dụng
 		/// </summary>
 		/// <param name="CMND">Chứng minh nhân dân</param>
 		/// <returns>Số lượng thuê bao</returns>
-		public int TinhTong_ThueBao_TheoCMND(string CMND)
+		public List<ThueBao> Tim_DS_ThueBao_TheoCMND(string CMND)
 		{
-			int kq = 0;
+			List<ThueBao> kq = new List<ThueBao>();
 			foreach (var item in DS_TB.DS_TB)
 			{
 				if (item.CMND == CMND)
-					kq++;
+					kq.Add(item);
 			}
 			return kq;
 		}
@@ -77,13 +77,13 @@ namespace QuanLyDanhBa
 		/// </summary>
 		/// <param name="thanhPho">Thành phố cần tìm</param>
 		/// <returns>Số lượng thuê bao</returns>
-		public int TinhTong_ThueBao_TheoThanhPho(string thanhPho)
+		public int Tinh_Tong_ThueBao_TheoThanhPho(string thanhPho)
 		{
 			int kq = 0;
 			List<string> DS_CMND = Tim_DS_CMND_TheoThanhPho(thanhPho);
 			foreach (var item in DS_CMND)
 			{
-				kq += TinhTong_ThueBao_TheoCMND(item);
+				kq += Tim_DS_ThueBao_TheoCMND(item).Count;
 			}
 			return kq;
 		}
@@ -99,12 +99,12 @@ namespace QuanLyDanhBa
 			int max = int.MinValue;
 			foreach (var item in DS_TP)
 			{
-				if (TinhTong_ThueBao_TheoThanhPho(item) > max)
-					max = TinhTong_ThueBao_TheoThanhPho(item);
+				if (Tinh_Tong_ThueBao_TheoThanhPho(item) > max)
+					max = Tinh_Tong_ThueBao_TheoThanhPho(item);
 			}
 			foreach (var item in DS_TP)
 			{
-				if (TinhTong_ThueBao_TheoThanhPho(item) == max)
+				if (Tinh_Tong_ThueBao_TheoThanhPho(item) == max)
 					kq.Add(item);
 			}
 			return kq;
@@ -121,12 +121,12 @@ namespace QuanLyDanhBa
 			int min = int.MaxValue;
 			foreach (var item in DS_TP)
 			{
-				if (TinhTong_ThueBao_TheoThanhPho(item) < min)
-					min = TinhTong_ThueBao_TheoThanhPho(item);
+				if (Tinh_Tong_ThueBao_TheoThanhPho(item) < min)
+					min = Tinh_Tong_ThueBao_TheoThanhPho(item);
 			}
 			foreach (var item in DS_TP)
 			{
-				if (TinhTong_ThueBao_TheoThanhPho(item) == min)
+				if (Tinh_Tong_ThueBao_TheoThanhPho(item) == min)
 					kq.Add(item);
 			}
 			return kq;
@@ -144,12 +144,12 @@ namespace QuanLyDanhBa
 			int min = int.MaxValue;
 			foreach (var item in DS_KH.DS_KH)
 			{
-				if (TinhTong_ThueBao_TheoCMND(item.CMND) < min)
-					min = TinhTong_ThueBao_TheoCMND(item.CMND);
+				if (Tim_DS_ThueBao_TheoCMND(item.CMND).Count < min)
+					min = Tim_DS_ThueBao_TheoCMND(item.CMND).Count;
 			}
 			foreach (var item in DS_KH.DS_KH)
 			{
-				if (TinhTong_ThueBao_TheoCMND(item.CMND) == min)
+				if (Tim_DS_ThueBao_TheoCMND(item.CMND).Count == min)
 					kq.Add(item);
 			}
 			return kq;
@@ -197,13 +197,13 @@ namespace QuanLyDanhBa
 		/// </summary>
 		/// <param name="tenDuong">Tên đường cần tìm</param>
 		/// <returns>Số lượng thuê bao</returns>
-		public int TinhTong_ThueBao_TheoConDuong(string tenDuong)
+		public int Tinh_Tong_ThueBao_TheoConDuong(string tenDuong)
 		{
 			int kq = 0;
 			List<string> DS_CMND = Tim_DS_CMND_TheoConDuong(tenDuong);
 			foreach (var item in DS_CMND)
 			{
-				kq += TinhTong_ThueBao_TheoCMND(item);
+				kq += Tim_DS_ThueBao_TheoCMND(item).Count;
 			}
 			return kq;
 		}
@@ -219,12 +219,12 @@ namespace QuanLyDanhBa
 			int max = int.MinValue;
 			foreach (var item in DS_CD)
 			{
-				if (TinhTong_ThueBao_TheoConDuong(item) > max)
-					max = TinhTong_ThueBao_TheoConDuong(item);
+				if (Tinh_Tong_ThueBao_TheoConDuong(item) > max)
+					max = Tinh_Tong_ThueBao_TheoConDuong(item);
 			}
 			foreach (var item in DS_CD)
 			{
-				if (TinhTong_ThueBao_TheoConDuong(item) == max)
+				if (Tinh_Tong_ThueBao_TheoConDuong(item) == max)
 					kq.Add(item);
 			}
 			return kq;
@@ -241,12 +241,12 @@ namespace QuanLyDanhBa
 			int min = int.MaxValue;
 			foreach (var item in DS_CD)
 			{
-				if (TinhTong_ThueBao_TheoConDuong(item) < min)
-					min = TinhTong_ThueBao_TheoConDuong(item);
+				if (Tinh_Tong_ThueBao_TheoConDuong(item) < min)
+					min = Tinh_Tong_ThueBao_TheoConDuong(item);
 			}
 			foreach (var item in DS_CD)
 			{
-				if (TinhTong_ThueBao_TheoConDuong(item) == min)
+				if (Tinh_Tong_ThueBao_TheoConDuong(item) == min)
 					kq.Add(item);
 			}
 			return kq;
@@ -259,8 +259,8 @@ namespace QuanLyDanhBa
 		/// </summary>
 		/// <typeparam name="T">Kiểu dữ liệu của list</typeparam>
 		/// <param name="list">Danh sách cần hoán vị</param>
-		/// <param name="indexA">Chỉ số cần hoán vị</param>
-		/// <param name="indexB">Chỉ số cần hoán vị</param>
+		/// <param name="indexA">Chỉ số cần hoán vị A</param>
+		/// <param name="indexB">Chỉ số cần hoán vị B</param>
 		public static void Swap<T>(IList<T> list, int indexA, int indexB)
 		{
 			T tmp = list[indexA];
@@ -273,15 +273,14 @@ namespace QuanLyDanhBa
 		/// </summary>
 		public void SapXep_Tang_Ten()
 		{
-			KhachHang[] myArray = DS_KH.DS_KH.ToArray();
 			string ten1, ten2;
 			string[] t1, t2;
-			for (int i = 0; i < myArray.Length - 1; i++)
+			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
 			{
-				for (int j = i + 1; j < myArray.Length; j++)
+				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
 				{
-					t1 = myArray[i].hoTen.Split(' ');
-					t2 = myArray[j].hoTen.Split(' ');
+					t1 = DS_KH.DS_KH[i].hoTen.Split(' ');
+					t2 = DS_KH.DS_KH[j].hoTen.Split(' ');
 					ten1 = t1[t1.Length - 1];
 					ten2 = t2[t2.Length - 1];
 					if (ten2.CompareTo(ten1) < 0)
@@ -295,15 +294,14 @@ namespace QuanLyDanhBa
 		/// </summary>
 		public void SapXep_Giam_HoTen()
 		{
-			KhachHang[] myArray = DS_KH.DS_KH.ToArray();
 			string ten1, ten2;
 			string[] t1, t2;
-			for (int i = 0; i < myArray.Length - 1; i++)
+			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
 			{
-				for (int j = i + 1; j < myArray.Length; j++)
+				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
 				{
-					t1 = myArray[i].hoTen.Split(' ');
-					t2 = myArray[j].hoTen.Split(' ');
+					t1 = DS_KH.DS_KH[i].hoTen.Split(' ');
+					t2 = DS_KH.DS_KH[j].hoTen.Split(' ');
 					ten1 = t1[t1.Length - 1];
 					ten2 = t2[t2.Length - 1];
 					if (ten2.CompareTo(ten1) > 0)
@@ -313,32 +311,30 @@ namespace QuanLyDanhBa
 		}
 
 		/// <summary>
-		/// Sắp xếp danh sách khách hàng theo chiều tăng của số thuê bao
+		/// Sắp xếp danh sách khách hàng theo chiều tăng của số lượng thuê bao
 		/// </summary>
 		public void SapXep_Tang_SoThueBao()
 		{
-			KhachHang[] myArray = DS_KH.DS_KH.ToArray();
-			for (int i = 0; i < myArray.Length - 1; i++)
+			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
 			{
-				for (int j = i + 1; j < myArray.Length; j++)
+				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
 				{
-					if (TinhTong_ThueBao_TheoCMND(myArray[j].CMND) < TinhTong_ThueBao_TheoCMND(myArray[i].CMND))
+					if (Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[j].CMND).Count < Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[i].CMND).Count)
 						Swap<KhachHang>(DS_KH.DS_KH, i, j);
 				}
 			}
 		}
 
 		/// <summary>
-		/// Sắp xếp danh sách khách hàng theo chiều giảm của số thuê bao
+		/// Sắp xếp danh sách khách hàng theo chiều giảm của số lượng thuê bao
 		/// </summary>
 		public void SapXep_Giam_SoThueBao()
 		{
-			KhachHang[] myArray = DS_KH.DS_KH.ToArray();
-			for (int i = 0; i < myArray.Length - 1; i++)
+			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
 			{
-				for (int j = i + 1; j < myArray.Length; j++)
+				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
 				{
-					if (TinhTong_ThueBao_TheoCMND(myArray[j].CMND) > TinhTong_ThueBao_TheoCMND(myArray[i].CMND))
+					if (Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[j].CMND).Count > Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[i].CMND).Count)
 						Swap<KhachHang>(DS_KH.DS_KH, i, j);
 				}
 			}
@@ -355,7 +351,7 @@ namespace QuanLyDanhBa
 			{
 				for (int j = i + 1; j < DS_TP.Length; j++)
 				{
-					if (TinhTong_ThueBao_TheoThanhPho(DS_TP[j]) < TinhTong_ThueBao_TheoThanhPho(DS_TP[i]))
+					if (Tinh_Tong_ThueBao_TheoThanhPho(DS_TP[j]) < Tinh_Tong_ThueBao_TheoThanhPho(DS_TP[i]))
 						Swap(DS_TP, i, j);
 				}
 			}
@@ -373,7 +369,7 @@ namespace QuanLyDanhBa
 			{
 				for (int j = i + 1; j < DS_TP.Length; j++)
 				{
-					if (TinhTong_ThueBao_TheoThanhPho(DS_TP[j]) > TinhTong_ThueBao_TheoThanhPho(DS_TP[i]))
+					if (Tinh_Tong_ThueBao_TheoThanhPho(DS_TP[j]) > Tinh_Tong_ThueBao_TheoThanhPho(DS_TP[i]))
 						Swap(DS_TP, i, j);
 				}
 			}
@@ -382,6 +378,10 @@ namespace QuanLyDanhBa
 
 		//*************Tìm tháng không có thuê bao nào đăng ký*************
 
+		/// <summary>
+		/// Tìm tháng không có thuê bao nào đăng ký
+		/// </summary>
+		/// <returns>Một danh sách</returns>
 		public List<int> Tim_Thang_KhongCoTB()
 		{
 			List<int> kq = new List<int>();
@@ -399,6 +399,11 @@ namespace QuanLyDanhBa
 
 		//*************Tìm tất cả khách hàng theo giới tính*************
 
+		/// <summary>
+		/// Tìm danh sách khách hàng theo giới tính
+		/// </summary>
+		/// <param name="gt">Giới tính nam/ nữ</param>
+		/// <returns>Một danh sách</returns>
 		public List<KhachHang> Tim_DS_KhachHang_GT(GioiTinh gt)
 		{
 			List<KhachHang> kq = new List<KhachHang>();
@@ -412,6 +417,10 @@ namespace QuanLyDanhBa
 
 		//*************Xóa tất cả khách hàng thuộc một tỉnh nào đó*************
 
+		/// <summary>
+		/// Xóa khách hàng ở một tỉnh nào đó
+		/// </summary>
+		/// <param name="tenTinh">Tên tỉnh cần xóa</param>
 		public void Xoa_KH_Tinh(string tenTinh)
 		{
 			string tinh;
@@ -432,10 +441,33 @@ namespace QuanLyDanhBa
 			}
 		}
 
-		//Xu ly xoa thue bao tai day
+		/// <summary>
+		/// Xóa thuê bao ở một tỉnh nào đó
+		/// </summary>
+		/// <param name="tenTinh">Tên tỉnh cần xóa</param>
+		public void Xoa_TB_Tinh(string tenTinh)
+		{
+			List<string> DS_TP = Tim_DS_ThanhPho_ThuocTinh(tenTinh);
+			List<string> DS_CMND = new List<string>();
+			foreach (var item in DS_TP)
+			{
+				DS_CMND = Tim_DS_CMND_TheoThanhPho(item);
+				foreach (var item1 in DS_TB.DS_TB)
+				{
+					foreach (var item2 in DS_CMND)
+					{
+						if (item1.CMND == item2)
+							DS_TB.DS_TB.Remove(item1);
+					}
+				}
+			}
+		}
 
 		//*************Tất cả khách hàng nào sinh tháng 1 thì được tặng thêm một số điện thoại mới có số là CMND*************
 
+		/// <summary>
+		/// Thêm một số điện thoại là số CMND nếu khách hàng sinh vào tháng một
+		/// </summary>
 		public void Them_SoDienThoai_NeuSinhThang1()
 		{
 			foreach (var item in DS_KH.DS_KH)
@@ -447,6 +479,10 @@ namespace QuanLyDanhBa
 
 		//*************Tìm ngày có nhiều khách hàng đăng ký nhất, ít người đăng ký nhất*************
 
+		/// <summary>
+		/// Tìm ngày mà có nhiều người đăng ký nhất
+		/// </summary>
+		/// <returns>Một danh sách</returns>
 		public List<int> Tim_NgayDK_Nhieu()
 		{
 			List<int> ngayDK = new List<int>();
@@ -464,23 +500,135 @@ namespace QuanLyDanhBa
 			return kq;
 		}
 
+		/// <summary>
+		/// Tìm ngày mà có nhiều ít đăng ký nhất
+		/// </summary>
+		/// <returns>Một danh sách</returns>
 		public List<int> Tim_NgayDK_It()
 		{
 			List<int> ngayDK = new List<int>();
 			List<int> kq = new List<int>();
-			List<int> temp = new List<int>();
+			int min = int.MaxValue;
 			for (int i = 0; i < 31; i++)
 				ngayDK.Add(0);
 			foreach (var item in DS_TB.DS_TB)
 			{
 				ngayDK[item.ngayDK.Day - 1]++;
 			}
-			temp = ngayDK;
-			temp.RemoveAll(val => val == 0);
-			int min = temp.Min();
+			foreach (var item in ngayDK)
+			{
+				if (item != 0 && item < min)
+					min = item;
+			}
 			for (int i = 0; i < 31; i++)
-				if (ngayDK[i] == min)
+				if (ngayDK[i] == 1)
 					kq.Add(i + 1);
+			return kq;
+		}
+
+		//********************Thống kê và hiển thị dữ liệu theo từng tỉnh và mỗi tỉnh hiển thị theo thành phố theo mẫu********************
+
+		/// <summary>
+		/// Tìm danh sách các tỉnh xuất hiện trong danh sách khách hàng
+		/// </summary>
+		/// <returns>Một danh sách</returns>
+		public List<string> Tim_DS_Tinh()
+		{
+			List<string> kq = new List<string>();
+			string tinh;
+			string[] t;
+			foreach (var item in DS_KH.DS_KH)
+			{
+				t = item.diaChi.Split(',');
+				tinh = t[t.Length - 1];
+				if (!kq.Contains(tinh))
+					kq.Add(tinh);
+			}
+			return kq;
+		}
+
+		/// <summary>
+		/// Tìm danh sách thành phố thuộc một tỉnh nào đó
+		/// </summary>
+		/// <param name="tenTinh">Tên tỉnh cần tìm</param>
+		/// <returns>Một danh sách</returns>
+		public List<string> Tim_DS_ThanhPho_ThuocTinh(string tenTinh)
+		{
+			List<string> kq = new List<string>();
+			string[] t;
+			foreach (var item in DS_KH.DS_KH)
+			{
+				t = item.diaChi.Split(',');
+				if (t[t.Length - 1] == tenTinh)
+					if (!kq.Contains(t[t.Length - 2]))
+						kq.Add(t[t.Length - 2]);
+			}
+			return kq;
+		}
+
+		/// <summary>
+		/// Tính tổng số thuê bao ở một tỉnh nào đó
+		/// </summary>
+		/// <param name="tenTinh">Tên tỉnh cần tìm</param>
+		/// <returns>Số lượng thuê bao</returns>
+		public int Tinh_Tong_ThueBao_TheoTinh(string tenTinh)
+		{
+			List<string> DS_TP = Tim_DS_ThanhPho_ThuocTinh(tenTinh);
+			int kq = 0;
+			foreach (var item in DS_TP)
+			{
+				kq += Tinh_Tong_ThueBao_TheoThanhPho(item);
+			}
+			return kq;
+		}
+
+		/// <summary>
+		/// Xuất danh sách khách hàng và thuê bao theo CMND
+		/// </summary>
+		/// <param name="CMND">CMND cần tìm</param>
+		/// <param name="stt">Số thứ tự</param>
+		/// <returns></returns>
+		public string Xuat_DS_KH_TB_TheoCMND(string CMND, int stt)
+		{
+			string kq = "\t\t";
+			foreach (var kh in DS_KH.DS_KH)
+			{
+				if (kh.CMND == CMND)
+				{
+					kq += stt + ". " + kh + ". So dien thoai: ";
+					foreach (var tb in DS_TB.DS_TB)
+					{
+						if (tb.CMND == CMND)
+							kq += tb.soDT + "; ";
+					}
+					kq += "\n";
+				}
+			}
+			return kq;
+		}
+
+		/// <summary>
+		/// Xuất danh sách thống kê theo tỉnh
+		/// </summary>
+		/// <param name="tenTinh">Tên tỉnh cần tìm</param>
+		/// <returns>Chuỗi kết quả</returns>
+		public string Xuat_DS_ThongKe_TheoTinh(string tenTinh)
+		{
+			string kq = "\n";
+			int stt = 1;
+			List<string> DS_TP = Tim_DS_ThanhPho_ThuocTinh(tenTinh);
+			List<string> DS_CMND = new List<string>();
+			kq += "Tinh: " + tenTinh + " . Tong so thue bao: " + Tinh_Tong_ThueBao_TheoTinh(tenTinh) + "\n";
+			foreach (var tp in DS_TP)
+			{
+				kq += "\t" + "Thanh pho: " + tp + " .Tong so thue bao: " + Tinh_Tong_ThueBao_TheoThanhPho(tp) + "\n";
+				DS_CMND = Tim_DS_CMND_TheoThanhPho(tp);
+				foreach (var cmnd in DS_CMND)
+				{
+					kq += Xuat_DS_KH_TB_TheoCMND(cmnd, stt);
+					stt++;
+				}
+			}
 			return kq;
 		}
 	}

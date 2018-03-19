@@ -175,16 +175,23 @@ namespace QuanLyDanhBa
 						Console.WriteLine("Ngay co nhieu nguoi dang ky nhat");
 						foreach (var item in QuanLy_TB.Tim_NgayDK_Nhieu())
 						{
-							Console.WriteLine(item);
+							Console.Write(item + "\t");
 						}
-						Console.WriteLine("Ngay co it nguoi dang ky nhat");
+						Console.WriteLine("\nNgay co it nguoi dang ky nhat");
 						foreach (var item in QuanLy_TB.Tim_NgayDK_It())
 						{
-							Console.WriteLine(item);
+							Console.Write(item + "\t");
 						}
 						break;
 					case Menu.HienThi_TheoMau:
 						Console.WriteLine("11. Thong ke va hien thi du lieu theo tung tinh va moi tinh hien thi theo thanh pho theo mau");
+						kq = QuanLy_TB.Tim_DS_Tinh();
+						foreach (var item in kq)
+						{
+							Console.WriteLine(QuanLy_TB.Xuat_DS_ThongKe_TheoTinh(item));
+							Console.WriteLine("\n==========================");
+							Console.ReadKey();
+						}
 						break;
 					default:
 						break;
