@@ -64,39 +64,29 @@ namespace QuanLyDanhBa
 						Console.WriteLine("Thanh pho co nhieu thue bao nhat la: ");
 						kq = QuanLy_TB.Tim_DS_ThanhPho_NhieuThueBao();
 						foreach (var item in kq)
-						{
 							Console.WriteLine(item);
-						}
 						kq = QuanLy_TB.Tim_DS_ThanhPho_ItThueBao();
 						Console.WriteLine("Thanh pho co it thue bao nhat la: ");
 						foreach (var item in kq)
-						{
 							Console.WriteLine(item);
-						}
 						break;
 					case Menu.Tim_Min_TB_KH:
 						Console.WriteLine("2. Tim thue bao so huu it so dien thoai nhat.");
 						Console.WriteLine("Danh sach chu thue bao so huu it so dien thoai nhat:");
 						kq_kh = QuanLy_TB.Tim_TB_ItDienThoai();
 						foreach (var item in kq_kh)
-						{
 							Console.WriteLine(item);
-						}
 						break;
 					case Menu.Tim_Max_Min_TB_Duong:
 						Console.WriteLine("3. Tim duong co it thue bao, nhieu thue bao nhat.");
 						Console.WriteLine("Con duong co nhieu thue bao nhat la: ");
 						kq = QuanLy_TB.Tim_DS_ConDuong_NhieuThueBao();
 						foreach (var item in kq)
-						{
 							Console.WriteLine(item);
-						}
 						kq = QuanLy_TB.Tim_DS_ConDuong_ItThueBao();
 						Console.WriteLine("Con duong co it thue bao nhat la: ");
 						foreach (var item in kq)
-						{
 							Console.WriteLine(item);
-						}
 						break;
 					case Menu.SapXep_KH:
 						Console.WriteLine("4. Sap xep khach hang tang giam theo ho ten, so luong so dien thoai so huu.");
@@ -121,39 +111,29 @@ namespace QuanLyDanhBa
 						ds = QuanLy_TB.SapXep_TP_Tang_SoThueBao();
 						Console.WriteLine("Danh sach cac thanh pho theo chieu tang dan so thue bao:");
 						foreach (var item in ds)
-						{
 							Console.WriteLine(item);
-						}
 						ds = QuanLy_TB.SapXep_TP_Giam_SoThueBao();
 						Console.WriteLine("Danh sach cac thanh pho theo chieu tang dan so thue bao:");
 						foreach (var item in ds)
-						{
 							Console.WriteLine(item);
-						}
 						break;
 					case Menu.Tim_Thang_KhongTB:
 						Console.WriteLine("6. Tim thang khong co thue bao nao dang ky.");
 						Console.Write("Cac thang khong co thue bao nao dang ky la: ");
 						thang = QuanLy_TB.Tim_Thang_KhongCoTB();
 						foreach (var item in thang)
-						{
 							Console.Write(item + "\t");
-						}
 						break;
 					case Menu.Tim_KH_GT:
 						Console.WriteLine("7. Tim tat ca cac khach hang theo gioi tinh.");
 						Console.WriteLine("Danh sach khach hang NAM:");
 						kq_kh = QuanLy_TB.Tim_DS_KhachHang_GT((GioiTinh)0);
 						foreach (var item in kq_kh)
-						{
 							Console.WriteLine(item);
-						}
 						Console.WriteLine("\nDanh sach khach hang NU:");
 						kq_kh = QuanLy_TB.Tim_DS_KhachHang_GT((GioiTinh)1);
 						foreach (var item in kq_kh)
-						{
 							Console.WriteLine(item);
-						}
 						break;
 					case Menu.Xoa_KH_Tinh:
 						Console.WriteLine("8. Xoa tat ca khach hang thuoc mot tinh nao do.");
@@ -174,14 +154,10 @@ namespace QuanLyDanhBa
 						Console.WriteLine("10. Tim ngay co nhieu khach hang dang ky nhat, it nguoi dang ky nhat.");
 						Console.WriteLine("Ngay co nhieu nguoi dang ky nhat");
 						foreach (var item in QuanLy_TB.Tim_NgayDK_Nhieu())
-						{
 							Console.Write(item + "\t");
-						}
 						Console.WriteLine("\nNgay co it nguoi dang ky nhat");
 						foreach (var item in QuanLy_TB.Tim_NgayDK_It())
-						{
 							Console.Write(item + "\t");
-						}
 						break;
 					case Menu.HienThi_TheoMau:
 						Console.WriteLine("11. Thong ke va hien thi du lieu theo tung tinh va moi tinh hien thi theo thanh pho theo mau");
