@@ -60,7 +60,7 @@ namespace QuanLyDanhBa
 		/// Tìm danh sách thuê bao mà mỗi người sử dụng
 		/// </summary>
 		/// <param name="CMND">Chứng minh nhân dân</param>
-		/// <returns>Số lượng thuê bao</returns>
+		/// <returns>Một danh sách</returns>
 		public List<ThueBao> Tim_DS_ThueBao_TheoCMND(string CMND)
 		{
 			List<ThueBao> kq = new List<ThueBao>();
@@ -235,7 +235,7 @@ namespace QuanLyDanhBa
 		/// <param name="list">Danh sách cần hoán vị</param>
 		/// <param name="indexA">Chỉ số cần hoán vị A</param>
 		/// <param name="indexB">Chỉ số cần hoán vị B</param>
-		public static void Swap<T>(IList<T> list, int indexA, int indexB)
+		public void Swap<T>(IList<T> list, int indexA, int indexB)
 		{
 			T tmp = list[indexA];
 			list[indexA] = list[indexB];
@@ -414,7 +414,7 @@ namespace QuanLyDanhBa
 		{
 			foreach (var item in DS_KH.DS_KH)
 				if (item.ngaySinh.Month == 1)
-					DS_TB.DS_TB.Add(new ThueBao(item.CMND, item.CMND, "18/3/2018"));
+					DS_TB.DS_TB.Add(new ThueBao(item.CMND, item.CMND, "1/1/2018"));
 		}
 
 		//*************Tìm ngày có nhiều khách hàng đăng ký nhất, ít người đăng ký nhất*************

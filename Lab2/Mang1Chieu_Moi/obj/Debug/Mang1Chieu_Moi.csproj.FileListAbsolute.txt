@@ -1,5 +1,0 @@
-c:\users\administrator\documents\Lab 2\Mang1Chieu_Moi\bin\Debug\Mang1Chieu_Moi.exe.config
-c:\users\administrator\documents\Lab 2\Mang1Chieu_Moi\bin\Debug\Mang1Chieu_Moi.exe
-c:\users\administrator\documents\Lab 2\Mang1Chieu_Moi\bin\Debug\Mang1Chieu_Moi.pdb
-c:\users\administrator\documents\Lab 2\Mang1Chieu_Moi\obj\Debug\Mang1Chieu_Moi.exe
-c:\users\administrator\documents\Lab 2\Mang1Chieu_Moi\obj\Debug\Mang1Chieu_Moi.pdb
