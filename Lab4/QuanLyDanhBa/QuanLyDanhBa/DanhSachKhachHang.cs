@@ -11,9 +11,19 @@ namespace QuanLyDanhBa
 	{
 		public List<KhachHang> DS_KH = new List<KhachHang>();
 
+		public KhachHang this[int index]
+		{
+			get { return DS_KH[index]; }
+		}
+
 		public DanhSachKhachHang()
 		{
 
+		}
+
+		public int Dem
+		{
+			get { return DS_KH.Count; }
 		}
 
 		public void Them_KH(KhachHang x)

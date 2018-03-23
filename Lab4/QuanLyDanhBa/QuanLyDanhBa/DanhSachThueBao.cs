@@ -11,9 +11,19 @@ namespace QuanLyDanhBa
 	{
 		public List<ThueBao> DS_TB = new List<ThueBao>();
 
+		public ThueBao this[int index]
+		{
+			get { return DS_TB[index]; }
+		}
+
 		public DanhSachThueBao()
 		{
 
+		}
+
+		public int Dem
+		{
+			get { return DS_TB.Count; }
 		}
 
 		public void Them_TB(ThueBao x)

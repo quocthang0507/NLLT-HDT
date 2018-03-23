@@ -26,15 +26,9 @@ namespace QuanLyDanhBa
 		public List<string> Tim_DS_ThanhPho()
 		{
 			List<string> kq = new List<string>();
-			string thanhPho;
-			string[] t;
 			foreach (var item in DS_KH.DS_KH)
-			{
-				t = item.diaChi.Split(',');
-				thanhPho = t[t.Length - 2];
-				if (!kq.Contains(thanhPho))
-					kq.Add(thanhPho);
-			}
+				if (!kq.Contains(item.thanhPho))
+					kq.Add(item.thanhPho);
 			return kq;
 		}
 
@@ -46,13 +40,9 @@ namespace QuanLyDanhBa
 		public List<string> Tim_DS_CMND_TheoThanhPho(string thanhPho)
 		{
 			List<string> kq = new List<string>();
-			string[] t;
 			foreach (var item in DS_KH.DS_KH)
-			{
-				t = item.diaChi.Split(',');
-				if (t[t.Length - 2] == thanhPho)
+				if (item.thanhPho == thanhPho)
 					kq.Add(item.CMND);
-			}
 			return kq;
 		}
 
@@ -93,9 +83,13 @@ namespace QuanLyDanhBa
 			List<string> kq = new List<string>();
 			List<string> DS_TP = Tim_DS_ThanhPho();
 			int max = int.MinValue;
+			int temp;
 			foreach (var item in DS_TP)
-				if (Tinh_Tong_ThueBao_TheoThanhPho(item) > max)
-					max = Tinh_Tong_ThueBao_TheoThanhPho(item);
+			{
+				temp = Tinh_Tong_ThueBao_TheoThanhPho(item);
+				if (temp > max)
+					max = temp;
+			}
 			foreach (var item in DS_TP)
 				if (Tinh_Tong_ThueBao_TheoThanhPho(item) == max)
 					kq.Add(item);
@@ -111,9 +105,13 @@ namespace QuanLyDanhBa
 			List<string> kq = new List<string>();
 			List<string> DS_TP = Tim_DS_ThanhPho();
 			int min = int.MaxValue;
+			int temp;
 			foreach (var item in DS_TP)
-				if (Tinh_Tong_ThueBao_TheoThanhPho(item) < min)
-					min = Tinh_Tong_ThueBao_TheoThanhPho(item);
+			{
+				temp = Tinh_Tong_ThueBao_TheoThanhPho(item);
+				if (temp < min)
+					min = temp;
+			}
 			foreach (var item in DS_TP)
 				if (Tinh_Tong_ThueBao_TheoThanhPho(item) == min)
 					kq.Add(item);
@@ -130,9 +128,13 @@ namespace QuanLyDanhBa
 		{
 			List<KhachHang> kq = new List<KhachHang>();
 			int min = int.MaxValue;
+			int temp;
 			foreach (var item in DS_KH.DS_KH)
-				if (Tim_DS_ThueBao_TheoCMND(item.CMND).Count < min)
-					min = Tim_DS_ThueBao_TheoCMND(item.CMND).Count;
+			{
+				temp = Tim_DS_ThueBao_TheoCMND(item.CMND).Count;
+				if (temp < min)
+					min = temp;
+			}
 			foreach (var item in DS_KH.DS_KH)
 				if (Tim_DS_ThueBao_TheoCMND(item.CMND).Count == min)
 					kq.Add(item);
@@ -148,13 +150,9 @@ namespace QuanLyDanhBa
 		public List<string> Tim_DS_ConDuong()
 		{
 			List<string> kq = new List<string>();
-			string[] t;
 			foreach (var item in DS_KH.DS_KH)
-			{
-				t = item.diaChi.Split(',');
-				if (!kq.Contains(t[1]))
-					kq.Add(t[1]);
-			}
+				if (!kq.Contains(item.tenDuong))
+					kq.Add(item.tenDuong);
 			return kq;
 		}
 
@@ -166,12 +164,10 @@ namespace QuanLyDanhBa
 		public List<string> Tim_DS_CMND_TheoConDuong(string tenDuong)
 		{
 			List<string> kq = new List<string>();
-			string[] t;
 			foreach (var item in DS_KH.DS_KH)
 			{
-				t = item.diaChi.Split(',');
-				if (t[1] == tenDuong)
-					kq.Add(item.CMND);
+				if (item.tenDuong == tenDuong)
+					kq.Add(item.tenDuong);
 			}
 			return kq;
 		}
@@ -199,9 +195,13 @@ namespace QuanLyDanhBa
 			List<string> kq = new List<string>();
 			List<string> DS_CD = Tim_DS_ConDuong();
 			int max = int.MinValue;
+			int temp;
 			foreach (var item in DS_CD)
-				if (Tinh_Tong_ThueBao_TheoConDuong(item) > max)
-					max = Tinh_Tong_ThueBao_TheoConDuong(item);
+			{
+				temp = Tinh_Tong_ThueBao_TheoConDuong(item);
+				if (max > temp)
+					temp = max;
+			}
 			foreach (var item in DS_CD)
 				if (Tinh_Tong_ThueBao_TheoConDuong(item) == max)
 					kq.Add(item);
@@ -217,9 +217,13 @@ namespace QuanLyDanhBa
 			List<string> kq = new List<string>();
 			List<string> DS_CD = Tim_DS_ConDuong();
 			int min = int.MaxValue;
+			int temp;
 			foreach (var item in DS_CD)
-				if (Tinh_Tong_ThueBao_TheoConDuong(item) < min)
-					min = Tinh_Tong_ThueBao_TheoConDuong(item);
+			{
+				temp = Tinh_Tong_ThueBao_TheoConDuong(item);
+				if (min > temp)
+					min = temp;
+			}
 			foreach (var item in DS_CD)
 				if (Tinh_Tong_ThueBao_TheoConDuong(item) == min)
 					kq.Add(item);
@@ -247,18 +251,10 @@ namespace QuanLyDanhBa
 		/// </summary>
 		public void SapXep_Tang_Ten()
 		{
-			string ten1, ten2;
-			string[] t1, t2;
-			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
-				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
-				{
-					t1 = DS_KH.DS_KH[i].hoTen.Split(' ');
-					t2 = DS_KH.DS_KH[j].hoTen.Split(' ');
-					ten1 = t1[t1.Length - 1];
-					ten2 = t2[t2.Length - 1];
-					if (ten2.CompareTo(ten1) < 0)
-						Swap<KhachHang>(DS_KH.DS_KH, i, j);
-				}
+			for (int i = 0; i < DS_KH.Dem - 1; i++)
+				for (int j = i + 1; j < DS_KH.Dem; j++)
+					if (string.Compare(DS_KH[j].ten, DS_KH[i].ten) < 0)
+						Swap(DS_KH.DS_KH, i, j);
 		}
 
 		/// <summary>
@@ -266,18 +262,10 @@ namespace QuanLyDanhBa
 		/// </summary>
 		public void SapXep_Giam_HoTen()
 		{
-			string ten1, ten2;
-			string[] t1, t2;
-			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
-				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
-				{
-					t1 = DS_KH.DS_KH[i].hoTen.Split(' ');
-					t2 = DS_KH.DS_KH[j].hoTen.Split(' ');
-					ten1 = t1[t1.Length - 1];
-					ten2 = t2[t2.Length - 1];
-					if (ten2.CompareTo(ten1) > 0)
-						Swap<KhachHang>(DS_KH.DS_KH, i, j);
-				}
+			for (int i = 0; i < DS_KH.Dem - 1; i++)
+				for (int j = i + 1; j < DS_KH.Dem; j++)
+					if (string.Compare(DS_KH[j].ten, DS_KH[i].ten) > 0)
+						Swap(DS_KH.DS_KH, i, j);
 		}
 
 		/// <summary>
@@ -285,10 +273,10 @@ namespace QuanLyDanhBa
 		/// </summary>
 		public void SapXep_Tang_SoThueBao()
 		{
-			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
-				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
-					if (Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[j].CMND).Count < Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[i].CMND).Count)
-						Swap<KhachHang>(DS_KH.DS_KH, i, j);
+			for (int i = 0; i < DS_KH.Dem - 1; i++)
+				for (int j = i + 1; j < DS_KH.Dem; j++)
+					if (Tim_DS_ThueBao_TheoCMND(DS_KH[j].CMND).Count < Tim_DS_ThueBao_TheoCMND(DS_KH[i].CMND).Count)
+						Swap(DS_KH.DS_KH, i, j);
 		}
 
 		/// <summary>
@@ -296,10 +284,10 @@ namespace QuanLyDanhBa
 		/// </summary>
 		public void SapXep_Giam_SoThueBao()
 		{
-			for (int i = 0; i < DS_KH.DS_KH.Count - 1; i++)
-				for (int j = i + 1; j < DS_KH.DS_KH.Count; j++)
-					if (Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[j].CMND).Count > Tim_DS_ThueBao_TheoCMND(DS_KH.DS_KH[i].CMND).Count)
-						Swap<KhachHang>(DS_KH.DS_KH, i, j);
+			for (int i = 0; i < DS_KH.Dem - 1; i++)
+				for (int j = i + 1; j < DS_KH.Dem; j++)
+					if (Tim_DS_ThueBao_TheoCMND(DS_KH[j].CMND).Count > Tim_DS_ThueBao_TheoCMND(DS_KH[i].CMND).Count)
+						Swap(DS_KH.DS_KH, i, j);
 		}
 
 		/// <summary>
@@ -373,14 +361,10 @@ namespace QuanLyDanhBa
 		/// <param name="tenTinh">Tên tỉnh cần xóa</param>
 		public void Xoa_KH_Tinh(string tenTinh)
 		{
-			string tinh;
-			string[] t;
 			List<KhachHang> khachHang = new List<KhachHang>();
 			foreach (var item in DS_KH.DS_KH)
 			{
-				t = item.diaChi.Split(',');
-				tinh = t[t.Length - 1];
-				if (tinh == tenTinh)
+				if (item.tenTinh == tenTinh)
 					khachHang.Add(item);
 			}
 			foreach (var item in khachHang)
@@ -439,7 +423,7 @@ namespace QuanLyDanhBa
 		}
 
 		/// <summary>
-		/// Tìm ngày mà có nhiều ít đăng ký nhất
+		/// Tìm ngày mà có nhiều ít đăng ký nhất (ít đăng ký chứ không phải là không đăng ký)
 		/// </summary>
 		/// <returns>Một danh sách</returns>
 		public List<int> Tim_NgayDK_It()
@@ -469,14 +453,10 @@ namespace QuanLyDanhBa
 		public List<string> Tim_DS_Tinh()
 		{
 			List<string> kq = new List<string>();
-			string tinh;
-			string[] t;
 			foreach (var item in DS_KH.DS_KH)
 			{
-				t = item.diaChi.Split(',');
-				tinh = t[t.Length - 1];
-				if (!kq.Contains(tinh))
-					kq.Add(tinh);
+				if (!kq.Contains(item.tenTinh))
+					kq.Add(item.tenTinh);
 			}
 			return kq;
 		}
@@ -489,13 +469,11 @@ namespace QuanLyDanhBa
 		public List<string> Tim_DS_ThanhPho_ThuocTinh(string tenTinh)
 		{
 			List<string> kq = new List<string>();
-			string[] t;
 			foreach (var item in DS_KH.DS_KH)
 			{
-				t = item.diaChi.Split(',');
-				if (t[t.Length - 1] == tenTinh)
-					if (!kq.Contains(t[t.Length - 2]))
-						kq.Add(t[t.Length - 2]);
+				if (item.tenTinh == tenTinh)
+					if (!kq.Contains(item.thanhPho))
+						kq.Add(item.thanhPho);
 			}
 			return kq;
 		}
@@ -515,7 +493,7 @@ namespace QuanLyDanhBa
 		}
 
 		/// <summary>
-		/// Xuất danh sách khách hàng và thuê bao theo CMND
+		/// Xuất chuỗi danh sách khách hàng và thuê bao theo CMND
 		/// </summary>
 		/// <param name="CMND">CMND cần tìm</param>
 		/// <param name="stt">Số thứ tự</param>
@@ -536,7 +514,7 @@ namespace QuanLyDanhBa
 		}
 
 		/// <summary>
-		/// Xuất danh sách thống kê theo tỉnh
+		/// Xuất chuỗi danh sách thống kê theo tỉnh
 		/// </summary>
 		/// <param name="tenTinh">Tên tỉnh cần tìm</param>
 		/// <returns>Chuỗi kết quả</returns>
