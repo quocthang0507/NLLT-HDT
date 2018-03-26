@@ -68,22 +68,25 @@ namespace QuanLyHinhHoc
 						break;
 					case Menu.Tim_HV_S_Max:
 						Console.WriteLine("3.Tim hinh vuong co dien tich lon nhat\n");
+						Console.WriteLine("Danh sach hinh vuong:");
 						QL_HH.DS_HV.Xuat();
-						Console.WriteLine("\nHinh vuong co dien tich lon nhat la: ");
+						Console.WriteLine("Hinh vuong co dien tich lon nhat la: ");
 						foreach (var item in QL_HH.Tim_HV_S_Max())
 							Console.WriteLine(item);
 						break;
 					case Menu.Tim_HCN_S_Min:
 						Console.WriteLine("4.Tim hinh chu nhat co dien tich nho nhat\n");
+						Console.WriteLine("Danh sach hinh chu nhat:");
 						QL_HH.DS_HCN.Xuat();
-						Console.WriteLine("\nHinh chu nhat co dien tich nho nhat la: ");
+						Console.WriteLine("Hinh chu nhat co dien tich nho nhat la: ");
 						foreach (var item in QL_HH.Tim_HCN_S_Min())
 							Console.WriteLine(item);
 						break;
 					case Menu.Tim_HT_R_Max:
 						Console.WriteLine("5.Tim hinh tron co ban kinh lon nhat.\n");
+						Console.WriteLine("Danh sach hinh tron:");
 						QL_HH.DS_HT.Xuat();
-						Console.WriteLine("\nHinh tron co ban kinh lon nhat la: ");
+						Console.WriteLine("Hinh tron co ban kinh lon nhat la: ");
 						foreach (var item in QL_HH.Tim_HT_R_Max())
 							Console.WriteLine(item);
 						break;
@@ -123,24 +126,60 @@ namespace QuanLyHinhHoc
 					case Menu.Tim_Hinh_S_MaxMin:
 						Console.WriteLine("9.Tim cac hinh co dien tich lon nhat, nho nhat\n");
 						Console.WriteLine("Hinh co dien tich lon nhat la:");
-						QL_HH.Tim_Hinh_S_Max();
-						Console.WriteLine("Hinh co dien tich nho nhat la:");
-						QL_HH.Tim_Hinh_S_Min();
+						foreach(var item in QL_HH.Tim_Hinh_S_Max())
+							Console.WriteLine(item);
+						Console.WriteLine("\nHinh co dien tich nho nhat la:");
+						foreach (var item in QL_HH.Tim_Hinh_S_Min())
+							Console.WriteLine(item);
 						break;
 					case Menu.Tim_Hinh_C_MaxMin:
 						Console.WriteLine("10.Tim cac hinh co chu vi lon nhat, nho nhat\n");
+						Console.WriteLine("Hinh co chu vi lon nhat la:");
+						foreach (var item in QL_HH.Tim_Hinh_C_Max())
+							Console.WriteLine(item);
+						Console.WriteLine("\nHinh co chu vi nho nhat la:");
+						foreach (var item in QL_HH.Tim_Hinh_C_Min())
+							Console.WriteLine(item);
 						break;
 					case Menu.HienThi_Hinh_S_TangGiam:
 						Console.WriteLine("11.Hien thi tat ca cac hinh theo chieu tang, giam cua dien tich\n");
+						Console.WriteLine("Danh sach theo chieu tang dien tich:");
+						QL_HH.HienThi_Hinh_S_Tang();
+						Console.WriteLine("\nDanh sach theo chieu giam dien tich:");
+						QL_HH.HienThi_Hinh_S_Giam();
 						break;
 					case Menu.HienThi_Hinh_C_TangGiam:
 						Console.WriteLine("12.Hien thi tat ca cac hinh theo chieu tang, giam cua chu vi\n");
+						Console.WriteLine("Danh sach theo chieu tang chu vi:");
+						QL_HH.HienThi_Hinh_C_Tang();
+						Console.WriteLine("\nDanh sach theo chieu giam chu vi:");
+						QL_HH.HienThi_Hinh_C_Giam();
 						break;
 					case Menu.Xoa_Hinh_S_MaxMin:
 						Console.WriteLine("13.Xoa cac hinh co dien tich nho nhat, lon nhat\n");
+						Console.WriteLine("Danh sach ban dau:");
+						QL_HH.Xuat();
+						Console.WriteLine("\n========\n");
+						Console.WriteLine("Danh sach sau khi xoa hinh co dien tich lon nhat:");
+						QL_HH.Xoa_Hinh_S_Max();
+						QL_HH.Xuat();
+						Console.WriteLine("\n========\n");
+						Console.WriteLine("Danh sach sau khi xoa hinh co dien tich nho nhat:");
+						QL_HH.Xoa_Hinh_S_Min();
+						QL_HH.Xuat();
 						break;
 					case Menu.Xoa_Hinh_C_MaxMin:
 						Console.WriteLine("14.Xoa cac hinh co chu vi nho nhat, lon nhat\n");
+						Console.WriteLine("Danh sach ban dau:");
+						QL_HH.Xuat();
+						Console.WriteLine("\n========\n");
+						Console.WriteLine("Danh sach sau khi xoa hinh co chu vi lon nhat:");
+						QL_HH.Xoa_Hinh_C_Max();
+						QL_HH.Xuat();
+						Console.WriteLine("\n========\n");
+						Console.WriteLine("Danh sach sau khi xoa hinh co chu vi nho nhat:");
+						QL_HH.Xoa_Hinh_C_Min();
+						QL_HH.Xuat();
 						break;
 					default:
 						break;

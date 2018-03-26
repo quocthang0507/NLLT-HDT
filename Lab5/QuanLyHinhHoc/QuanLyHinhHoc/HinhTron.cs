@@ -52,7 +52,7 @@ namespace QuanLyHinhHoc
 
 		public override string ToString()
 		{
-			return string.Format("Hinh tron: Ban kinh {0}, Dien tich {1}, Chu vi {2}", banKinh, dienTich, chuVi);
+			return string.Format("\tHinh tron: Ban kinh {0}, Dien tich {1}, Chu vi {2}", banKinh, dienTich, chuVi);
 		}
 
 		public void Tinh_ChuVi()

@@ -49,6 +49,7 @@
     <Compile Include="HinhChuNhat.cs" />
     <Compile Include="HinhTron.cs" />
     <Compile Include="HinhVuong.cs" />
+    <Compile Include="KeyValuePair.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyHinhHoc.cs" />

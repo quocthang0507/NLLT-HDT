@@ -61,7 +61,7 @@ namespace QuanLyHinhHoc
 
 		public override string ToString()
 		{
-			return string.Format("Hinh chu nhat: Chieu dai {0}, Chieu rong {1}, Dien tich {2}, Chu vi {3}", chieuDai, chieuRong, dienTich, chuVi);
+			return string.Format("\tHinh chu nhat: Chieu dai {0}, Chieu rong {1}, Dien tich {2}, Chu vi {3}", chieuDai, chieuRong, dienTich, chuVi);
 		}
 
 		public void Tinh_ChuVi()

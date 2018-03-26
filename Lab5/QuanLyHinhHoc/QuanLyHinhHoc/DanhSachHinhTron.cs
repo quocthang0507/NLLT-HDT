@@ -27,22 +27,20 @@ namespace QuanLyHinhHoc
 
 		public override string ToString()
 		{
-			string s = "Danh sach hinh tron:\n";
+			string s = "";
 			foreach (var item in DS_HT)
-			{
-				s += "\t" + item + "\n";
-			}
+				s += item + "\n";
 			return s;
 		}
 
 		public void Xuat()
 		{
-			Console.WriteLine("Danh sach hinh tron:");
-			foreach (var item in DS_HT)
-			{
-				Console.WriteLine("\t" + item);
-			}
+			Console.WriteLine(this);
 		}
 
+		public void Xoa(HinhTron a)
+		{
+			DS_HT.Remove(a);
+		}
 	}
 }
