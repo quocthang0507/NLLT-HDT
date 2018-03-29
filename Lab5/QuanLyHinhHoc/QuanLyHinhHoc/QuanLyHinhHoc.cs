@@ -276,6 +276,7 @@ namespace QuanLyHinhHoc
 			return kq;
 		}
 
+
 		/// <summary>
 		/// Tìm hình có chu vi nhỏ nhất
 		/// </summary>
