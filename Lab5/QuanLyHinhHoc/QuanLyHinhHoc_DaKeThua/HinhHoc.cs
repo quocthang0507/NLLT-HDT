@@ -15,6 +15,10 @@ namespace QuanLyHinhHoc_DaKeThua
 	class HinhTron : IHinhHoc
 	{
 		float banKinh;
+		public float bk
+		{
+			get { return banKinh; }
+		}
 		public HinhTron()
 		{
 
