@@ -9,16 +9,16 @@ namespace QuanLyThietBi
 {
 	class DanhSachLinhKien
 	{
-		List<ILinhKien> DS = new List<ILinhKien>();
+		public List<ILinhKien> DS = new List<ILinhKien>();
 
 		public void Them(ILinhKien x)
 		{
 			DS.Add(x);
 		}
 
-		public void Xoa(ILinhKien x)
+		public void Xoa_RAM(float gia)
 		{
-			DS.Remove(x);
+			DS.RemoveAll(t => t is RAM && t.Gia == gia);
 		}
 
 		public override string ToString()
@@ -53,6 +53,11 @@ namespace QuanLyThietBi
 					Them(new CPU(float.Parse(x[1]), x[0]));
 				}
 			}
+		}
+
+		public int Dem()
+		{
+			return DS.Count();
 		}
 	}
 }

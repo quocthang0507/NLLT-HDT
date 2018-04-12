@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyThietBi
 {
+	enum Gia
+	{
+		TongGia,
+		GiaCPU,
+		GiaRAM
+	}
 	class DanhSachThietBi
 	{
 		public List<IThietBi> DS = new List<IThietBi>();
@@ -16,9 +22,9 @@ namespace QuanLyThietBi
 			DS.Add(x);
 		}
 
-		public void Xoa(IThietBi x)
+		public void Xoa_ThietBi_RAM_GiaX(float gia)
 		{
-			DS.Remove(x);
+			DS.RemoveAll(t => t.GiaRAM == gia);
 		}
 
 		public override string ToString()
@@ -89,26 +95,51 @@ namespace QuanLyThietBi
 			return DS.Count();
 		}
 
-		public float Tim_Max()
+		public float Tim_Max(int gia)
 		{
 			float max = float.MinValue;
-			foreach (var item in this.DS)
-			{
-				if (item.TinhGia() > max)
-					max = item.TinhGia();
-				item
-			}
+			foreach (var item in DS)
+				switch ((Gia)gia)
+				{
+					case Gia.TongGia:
+						if (item.TinhGia() > max)
+							max = item.TinhGia();
+						break;
+					case Gia.GiaCPU:
+						if (item.GiaCPU > max)
+							max = item.GiaCPU;
+						break;
+					case Gia.GiaRAM:
+						if (item.GiaRAM > max)
+							max = item.GiaRAM;
+						break;
+					default:
+						break;
+				}
 			return max;
 		}
 
-		public float Tim_Min()
+		public float Tim_Min(int gia)
 		{
 			float min = float.MaxValue;
-			foreach (var item in this.DS)
-			{
-				if (item.TinhGia() < min)
-					min = item.TinhGia();
-			}
+			foreach (var item in DS)
+				switch ((Gia)gia)
+				{
+					case Gia.TongGia:
+						if (item.TinhGia() < min)
+							min = item.TinhGia();
+						break;
+					case Gia.GiaCPU:
+						if (item.GiaCPU < min)
+							min = item.GiaCPU;
+						break;
+					case Gia.GiaRAM:
+						if (item.GiaRAM < min)
+							min = item.GiaRAM;
+						break;
+					default:
+						break;
+				}
 			return min;
 		}
 	}

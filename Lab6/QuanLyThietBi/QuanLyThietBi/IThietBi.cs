@@ -9,12 +9,70 @@ namespace QuanLyThietBi
 	interface IThietBi
 	{
 		float TinhGia();
+		float GiaCPU { get; set; }
+		float GiaRAM { get; set; }
+		string TenCPU { get; set; }
+		string TenRAM { get; set; }
 	}
 
 	class MayAnh : IThietBi
 	{
 		public List<ILinhKien> DS_LK = new List<ILinhKien>();
 		public string tenMA;
+		public float giaRAM, giaCPU;
+		public string tenCPU, tenRAM;
+
+		public float GiaCPU
+		{
+			get
+			{
+				return giaCPU;
+			}
+
+			set
+			{
+				giaCPU = value;
+			}
+		}
+
+		public float GiaRAM
+		{
+			get
+			{
+				return giaRAM;
+			}
+
+			set
+			{
+				giaRAM = value;
+			}
+		}
+
+		public string TenCPU
+		{
+			get
+			{
+				return tenCPU;
+			}
+
+			set
+			{
+				tenCPU = value;
+			}
+		}
+
+		public string TenRAM
+		{
+			get
+			{
+				return tenRAM;
+			}
+
+			set
+			{
+				tenRAM = value;
+			}
+		}
 
 		public void Them(ILinhKien x)
 		{
@@ -31,7 +89,11 @@ namespace QuanLyThietBi
 		{
 			tenMA = ten;
 			Them(r);
+			giaRAM = r.Gia;
+			tenRAM = r.Ten;
 			Them(c);
+			giaCPU = c.Gia;
+			tenCPU = c.Ten;
 		}
 		public float TinhGia()
 		{
@@ -55,6 +117,60 @@ namespace QuanLyThietBi
 	{
 		public List<ILinhKien> DS_LK = new List<ILinhKien>();
 		public string tenMT;
+		public float giaRAM, giaCPU;
+		public string tenCPU, tenRAM;
+
+		public float GiaCPU
+		{
+			get
+			{
+				return giaCPU;
+			}
+
+			set
+			{
+				giaCPU = value;
+			}
+		}
+
+		public float GiaRAM
+		{
+			get
+			{
+				return giaRAM;
+			}
+
+			set
+			{
+				giaRAM = value;
+			}
+		}
+
+		public string TenCPU
+		{
+			get
+			{
+				return tenCPU;
+			}
+
+			set
+			{
+				tenCPU = value;
+			}
+		}
+
+		public string TenRAM
+		{
+			get
+			{
+				return tenRAM;
+			}
+
+			set
+			{
+				tenRAM = value;
+			}
+		}
 
 		public void Them(ILinhKien x)
 		{
@@ -71,7 +187,11 @@ namespace QuanLyThietBi
 		{
 			tenMT = ten;
 			Them(r);
+			giaRAM = r.Gia;
+			tenRAM = r.Ten;
 			Them(c);
+			giaCPU = c.Gia;
+			tenCPU = c.Ten;
 		}
 		public float TinhGia()
 		{
