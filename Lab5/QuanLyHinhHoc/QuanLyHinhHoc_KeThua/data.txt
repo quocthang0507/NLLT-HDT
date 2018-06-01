@@ -1,0 +1,12 @@
+HT 5
+HV 7
+HCN 5 1
+HT 8
+HV 9
+HCN 7 5
+HT 4.5
+HV 5.6
+HCN 8 4
+HT 7.3
+HV 10.2
+HCN 4.7 3.6
