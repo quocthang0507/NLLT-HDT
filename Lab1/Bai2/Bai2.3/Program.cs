@@ -14,12 +14,13 @@ namespace Bai2._3
 			Console.Write("Nhap vao mot chuoi : ");
 			sHienThi = Console.ReadLine();
 			Console.Write("Chuoi vua nhap vao : {0}", sHienThi);
-			Console.ReadLine();
+			//Console.ReadLine();
+			HienThi();
 		}
 
 		private static void HienThi()
 		{
-			HienThi();
+			//HienThi();
 			Console.ReadLine();
 		}
 	}

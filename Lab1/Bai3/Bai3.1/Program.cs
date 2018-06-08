@@ -11,16 +11,13 @@ namespace Bai3._1
 		static void Main(string[] args)
 		{
 			int n;
-			Console.Write("Nhap vao so nguyen am n: ");
-			n = int.Parse(Console.ReadLine());
-			if (n > 0)
+			do
 			{
-				Console.WriteLine("Phai nhap vao so nguyen am");
-				Console.ReadLine();
-				return;
-			}
+				Console.Write("Nhap vao so nguyen am n: ");
+				n = int.Parse(Console.ReadLine());
+			} while (n >= 0);
 			int kq = TinhTong(n);
-			Console.WriteLine("Ket qua tong so nguyen am {0} la {1}", n, kq);
+			Console.WriteLine("Ket qua tong so nguyen am tu {0} den -1 la {1}", n, kq);
 			Console.ReadLine();
 		}
 

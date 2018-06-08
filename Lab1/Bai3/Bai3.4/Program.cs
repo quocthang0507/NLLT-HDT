@@ -23,7 +23,7 @@ namespace Bai3._4
 		private static void TinhTong(int n)
 		{
 			int odd = 0, even = 0;
-			for (int i = 0; i <= n; i++)
+			for (int i = 1; i <= n; i++)
 			{
 				if (i % 2 == 0)
 					even += i;

@@ -45,7 +45,7 @@ namespace Bai3
 			return this.phanThuc.ToString() + "+" + this.phanAo.ToString() + "i";
 		}
 
-		public double Modun(SoPhuc a)
+		public static double Modun(SoPhuc a)
 		{
 			return Math.Sqrt(Math.Pow(a.phanThuc, 2) + Math.Pow(a.phanAo, 2));
 		}
@@ -57,7 +57,7 @@ namespace Bai3
 			return this.phanThuc.ToString() + "-" + this.phanAo.ToString() + "i";
 		}
 
-		public string Cong(SoPhuc a,SoPhuc b)
+		public static string Cong(SoPhuc a, SoPhuc b)
 		{
 			double phanThuc = a.phanThuc + b.phanThuc;
 			double phanAo = a.phanAo + b.phanAo;
@@ -66,7 +66,7 @@ namespace Bai3
 			return phanThuc.ToString() + "+" + phanAo.ToString() + "i";
 		}
 
-		public string Tru(SoPhuc a, SoPhuc b)
+		public static string Tru(SoPhuc a, SoPhuc b)
 		{
 			double phanThuc = a.phanThuc - b.phanThuc;
 			double phanAo = a.phanAo - b.phanAo;
@@ -75,7 +75,7 @@ namespace Bai3
 			return phanThuc.ToString() + "+" + phanAo.ToString() + "i";
 		}
 
-		public string Nhan(SoPhuc a,SoPhuc b)
+		public static string Nhan(SoPhuc a, SoPhuc b)
 		{
 			double phanThuc = a.phanThuc * b.phanThuc - a.phanAo * b.phanAo;
 			double phanAo = a.phanThuc * b.phanAo + b.phanThuc * a.phanAo;
@@ -84,7 +84,7 @@ namespace Bai3
 			return phanThuc.ToString() + "+" + phanAo.ToString() + "i";
 		}
 
-		public string Chia(SoPhuc a,SoPhuc b)
+		public static string Chia(SoPhuc a, SoPhuc b)
 		{
 			SoPhuc lienHop_b = new SoPhuc();
 			lienHop_b.phanThuc = b.phanThuc;

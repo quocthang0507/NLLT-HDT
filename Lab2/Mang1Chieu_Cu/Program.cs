@@ -507,7 +507,7 @@ namespace Mang1Chieu
 		}
 
 		/// <summary>
-		/// Đếm số phần tử có giá trị bằng X trong mảng
+		/// Đếm số phần tử có giá trị bằng x trong mảng
 		/// </summary>
 		/// <param name="a">Mảng cần đếm</param>
 		/// <param name="length">Chiều dài mảng</param>

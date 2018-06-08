@@ -12,11 +12,12 @@ namespace Bai1
 		{
 			MaTran a = new MaTran(3, 3);
 			a.Nhap();
-			Console.WriteLine("Ma tran a \n" + a.ToString());
+			Console.WriteLine("\nMa tran a: \n" + a.ToString());
 			MaTran b = a;
-			Console.WriteLine("Ma tran b \n" + b.ToString());
-			a.Tong(b);
-			Console.WriteLine("Ma tran tong \n" + a.ToString());
+			Console.WriteLine("\nMa tran b: \n" + b.ToString());
+			//a.Tong(b);
+			a = MaTran.Tong(a, b);
+			Console.WriteLine("\nTong 2 ma tran: \n" + a.ToString());
 			Console.Read();
 		}
 	}

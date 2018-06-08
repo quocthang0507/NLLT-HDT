@@ -37,16 +37,17 @@ namespace Bai1
 		/// <param name="a">Ma trận tham chiếu</param>
 		public MaTran(MaTran a)
 		{
-			mt = new double[a.hang, a.cot];
-			this.hang = a.hang;
-			this.cot = a.cot;
-			for (int i = 0; i < a.hang; i++)
-			{
-				for (int j = 0; j < a.cot; j++)
-				{
-					this.mt[i, j] = a.mt[i, j];
-				}
-			}
+			//mt = new double[a.hang, a.cot];
+			//this.hang = a.hang;
+			//this.cot = a.cot;
+			//for (int i = 0; i < a.hang; i++)
+			//{
+			//	for (int j = 0; j < a.cot; j++)
+			//	{
+			//		this.mt[i, j] = a.mt[i, j];
+			//	}
+			//}
+			mt = a.mt;
 		}
 
 		/// <summary>
@@ -128,7 +129,7 @@ namespace Bai1
 		/// <param name="a">Ma trận đầu tiên</param>
 		/// <param name="b">Ma trận thứ hai</param>
 		/// <returns>Ma trận tổng</returns>
-		public MaTran Tong(MaTran a, MaTran b)
+		public static MaTran Tong(MaTran a, MaTran b)
 		{
 			MaTran kq = new MaTran(a.hang, a.cot);
 			for (int i = 0; i < b.hang; i++)

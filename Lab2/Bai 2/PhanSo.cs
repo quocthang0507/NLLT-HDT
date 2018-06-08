@@ -72,7 +72,7 @@ namespace QuanLyPhanSo
 			return kq;
 		}
 
-		public int UCLN(int a, int b)
+		public static int UCLN(int a, int b)
 		{
 			int r;
 			a = Math.Abs(a);
@@ -86,12 +86,12 @@ namespace QuanLyPhanSo
 			return Math.Abs(a);
 		}
 
-		public int BCNN(int a, int b)
+		public static int BCNN(int a, int b)
 		{
 			return Math.Abs((a * b) / UCLN(a, b));
 		}
 
-		public void RutGon(PhanSo a)
+		public static void RutGon(PhanSo a)
 		{
 			int d;
 			d = UCLN(Math.Abs(a.tuSo), a.mauSo);
@@ -99,7 +99,7 @@ namespace QuanLyPhanSo
 			a.tuSo /= (int)d;
 		}
 
-		public void QuyDong(PhanSo a, PhanSo b)
+		public static void QuyDong(PhanSo a, PhanSo b)
 		{
 			int d;
 			RutGon(a);
@@ -110,7 +110,7 @@ namespace QuanLyPhanSo
 			a.mauSo = b.mauSo = d;
 		}
 
-		public PhanSo Cong(PhanSo a, PhanSo b)
+		public static PhanSo Cong(PhanSo a, PhanSo b)
 		{
 			PhanSo kq = new PhanSo();
 			QuyDong(a, b);
@@ -128,7 +128,7 @@ namespace QuanLyPhanSo
 		{
 			return a.Cong(b);
 		}
-		public PhanSo Tru(PhanSo a, PhanSo b)
+		public static PhanSo Tru(PhanSo a, PhanSo b)
 		{
 			PhanSo kq = new PhanSo();
 			QuyDong(a, b);
@@ -146,7 +146,7 @@ namespace QuanLyPhanSo
 			return a.Tru(b);
 		}
 
-		public PhanSo Nhan(PhanSo a, PhanSo b)
+		public static PhanSo Nhan(PhanSo a, PhanSo b)
 		{
 			PhanSo kq = new PhanSo();
 			RutGon(a);
@@ -166,7 +166,7 @@ namespace QuanLyPhanSo
 			return a.Nhan(b);
 		}
 
-		public PhanSo Chia(PhanSo a, PhanSo b)
+		public static PhanSo Chia(PhanSo a, PhanSo b)
 		{
 			PhanSo kq = new PhanSo();
 			RutGon(a);
@@ -195,22 +195,22 @@ namespace QuanLyPhanSo
 		}
 		public static bool operator ==(PhanSo a, PhanSo b)
 		{
-			a.QuyDong(a, b);
+			QuyDong(a, b);
 			return (a.tuSo == b.tuSo);
 		}
 		public static bool operator !=(PhanSo a, PhanSo b)
 		{
-			a.QuyDong(a, b);
+			QuyDong(a, b);
 			return (a.tuSo != b.tuSo);
 		}
 		public static bool operator >(PhanSo a, PhanSo b)
 		{
-			a.QuyDong(a, b);
+			QuyDong(a, b);
 			return (a.tuSo > b.tuSo);
 		}
 		public static bool operator <(PhanSo a, PhanSo b)
 		{
-			a.QuyDong(a, b);
+			QuyDong(a, b);
 			return (a.tuSo < b.tuSo);
 		}
 	}

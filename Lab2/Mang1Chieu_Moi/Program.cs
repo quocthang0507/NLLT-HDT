@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 //using System.IO;
@@ -327,7 +328,7 @@ namespace MangMotChieu
 			Console.WriteLine();
 			for (int i = 0; i < length; i++)
 			{
-				Console.Write("\t" + mang[i]);
+				Console.Write(mang[i] + "\t");
 				if ((i + 1) % 10 == 0)
 					Console.WriteLine();
 			}
@@ -342,7 +343,7 @@ namespace MangMotChieu
 		private static void NhapTD(int[] mang, ref int length)
 		{
 			//string line = "";
-			//using (StreamReader sr = new StreamReader(@"D:\MangMotChieu\MangMotChieu\File.txt"))
+			//using (StreamReader sr = new StreamReader(@"File.txt"))
 			//{
 			//	while ((line = sr.ReadLine()) != null)
 			//	{

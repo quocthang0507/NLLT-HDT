@@ -19,10 +19,10 @@ namespace Bai3
 			Console.WriteLine("Cac phep toan tren so phuc: ");
 			Console.WriteLine("So phuc lien hop cua " + a.ToString() + " = " + a.SoPhuc_LienHop());
 			Console.WriteLine("So phuc lien hop cua " + b.ToString() + " = " + b.SoPhuc_LienHop());
-			Console.WriteLine(a.ToString() + " + " + b.ToString() + " = " + a.Cong(a, b));
-			Console.WriteLine(a.ToString() + " - " + b.ToString() + " = " + a.Tru(a, b));
-			Console.WriteLine(a.ToString() + " x " + b.ToString() + " = " + a.Nhan(a, b));
-			Console.WriteLine(a.ToString() + " / " + b.ToString() + " = " + a.Chia(a, b));
+			Console.WriteLine(a.ToString() + " + " + b.ToString() + " = " + SoPhuc.Cong(a, b));
+			Console.WriteLine(a.ToString() + " - " + b.ToString() + " = " + SoPhuc.Tru(a, b));
+			Console.WriteLine(a.ToString() + " x " + b.ToString() + " = " + SoPhuc.Nhan(a, b));
+			Console.WriteLine(a.ToString() + " / " + b.ToString() + " = " + SoPhuc.Chia(a, b));
 			Console.ReadLine();
 		}
 	}

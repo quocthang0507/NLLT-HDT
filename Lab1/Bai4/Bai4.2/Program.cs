@@ -10,16 +10,19 @@ namespace Bai4._2
 	{
 		static void Main(string[] args)
 		{
+			//Nhập và khởi tạo mảng một chiều kích thước n
 			int n;
 			Console.Write("Nhap vao kich thuoc mang: ");
 			n = int.Parse(Console.ReadLine());
 			double [] a = new double[n];
+			//Nhập các phần tử
 			Console.WriteLine("Nhap vao cac so thuc:");
 			for (int i = 0; i < n; i++)
 			{
 				Console.Write("Phan tu a[{0}]= ", i);
 				a[i] = double.Parse(Console.ReadLine());
 			}
+			//Xuất mảng
 			Console.WriteLine("Danh sach cac phan tu ");
 			for (int i = 0; i < n; i++)
 			{

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhanSo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,21 +13,23 @@ namespace Bai2
 		{
 			Console.WriteLine("Phan so dau tien: ");
 			PhanSo a = new PhanSo();
+			a.Nhap_PhanSo();
 			Console.WriteLine("\nPhan so thu hai: ");
 			PhanSo b = new PhanSo();
+			b.Nhap_PhanSo();
 			Console.Write("\nPhan so dau tien: ");
 			Console.WriteLine(a.ToString());
 			Console.Write("Phan so thu hai: ");
 			Console.WriteLine(b.ToString());
 			string A = a.ToString(), B = b.ToString();
 			Console.WriteLine("\nCac thao tac tren hai phan so: ");
-			PhanSo kq = a.Cong(a, b);
+			PhanSo kq = PhanSo.Cong(a, b);
 			Console.WriteLine(A + " + " + B + " = " + kq.ToString());
-			kq = a.Tru(a, b);
+			kq = PhanSo.Tru(a, b);
 			Console.WriteLine(A + " - " + B + " = " + kq.ToString());
-			kq = a.Nhan(a, b);
+			kq = PhanSo.Nhan(a, b);
 			Console.WriteLine(A + " x " + B + " = " + kq.ToString());
-			kq = a.Chia(a, b);
+			kq = PhanSo.Chia(a, b);
 			Console.WriteLine(A + " / " + B + " = " + kq.ToString());
 			Console.ReadKey();
 		}
