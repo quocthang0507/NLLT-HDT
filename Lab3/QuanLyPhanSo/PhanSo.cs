@@ -187,6 +187,7 @@ namespace QuanLyPhanSo
 			kq.RutGon();
 			return kq;
 		}
+
 		public PhanSo Chia(PhanSo a)
 		{
 			return Chia(this, a);
@@ -196,21 +197,30 @@ namespace QuanLyPhanSo
 		{
 			return a.Chia(b);
 		}
+
 		public static bool operator ==(PhanSo a, PhanSo b)
 		{
 			QuyDong(a, b);
 			return (a.tuSo == b.tuSo);
 		}
+
+		public override bool Equals(PhanSo a)
+		{
+			return (this == a);
+		}
+
 		public static bool operator !=(PhanSo a, PhanSo b)
 		{
 			QuyDong(a, b);
 			return (a.tuSo != b.tuSo);
 		}
+
 		public static bool operator >(PhanSo a, PhanSo b)
 		{
 			QuyDong(a, b);
 			return (a.tuSo > b.tuSo);
 		}
+
 		public static bool operator <(PhanSo a, PhanSo b)
 		{
 			QuyDong(a, b);

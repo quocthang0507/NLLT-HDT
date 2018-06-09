@@ -378,21 +378,31 @@ namespace QuanLyPhanSo
             return x.CompareTo(y);
         }
 
+		/// <summary>
+		/// Trả về giá trị của phân số	
+		/// </summary>
+		/// <param name="a">Phân số</param>
+		/// <returns></returns>
+		public static double Tinh_GT(PhanSo a)
+		{
+			return (float)a.tuSo / a.mauSo;
+		}
+
         /// <summary>
         /// Hàm sắp xếp mảng theo chiều tăng
         /// </summary>
         public void SapXep_Tang()
         {
-            for (int i = 0; i < length - 1; i++)
-                for (int j = i + 1; j < length; j++)
-                    //if (SoSanh_2PS(a[i], a[j]) > 0)
-                    if (a[i] > a[j])
-                    {
-                        PhanSo t = a[j];
-                        a[j] = a[i];
-                        a[i] = t;
-                    }
-            RutGon();
+			for (int i = 0; i < length - 1; i++)
+				for (int j = i + 1; j < length; j++)
+					//if (SoSanh_2PS(a[i], a[j]) > 0)
+					if (a[i] > a[j])
+					{
+						PhanSo t = a[j];
+						a[j] = a[i];
+						a[i] = t;
+					}
+			RutGon();
         }
 
         /// <summary>

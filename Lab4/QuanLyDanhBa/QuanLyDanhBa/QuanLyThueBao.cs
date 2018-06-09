@@ -439,7 +439,7 @@ namespace QuanLyDanhBa
 				if (item != 0 && item < min)
 					min = item;
 			for (int i = 0; i < 31; i++)
-				if (ngayDK[i] == 1)
+				if (ngayDK[i] == min)
 					kq.Add(i + 1);
 			return kq;
 		}
