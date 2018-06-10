@@ -67,6 +67,7 @@ namespace QuanLyHinhHoc_DaKeThua
 		{
 			return canh * canh;
 		}
+
 		public override string ToString()
 		{
 			return string.Format("Hinh vuong: Canh {0}, Dien tich {1}, Chu vi {2}", canh, Tinh_DienTich(), Tinh_ChuVi());
