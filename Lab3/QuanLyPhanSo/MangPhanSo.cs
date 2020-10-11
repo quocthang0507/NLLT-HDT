@@ -84,7 +84,7 @@ namespace QuanLyPhanSo
                 //if (SoSanh_2PS(max, a[i]) < 0)
                 if (max < a[i])
                     max = a[i];
-            RutGon();
+			//RutGon();
             return max;
         }
 
@@ -99,7 +99,7 @@ namespace QuanLyPhanSo
                 //if (SoSanh_2PS(min, a[i]) > 0)
                 if (min > a[i])
                     min = a[i];
-            RutGon();
+			//RutGon();
             return min;
         }
 
@@ -378,15 +378,15 @@ namespace QuanLyPhanSo
             return x.CompareTo(y);
         }
 
-		/// <summary>
-		/// Trả về giá trị của phân số	
-		/// </summary>
-		/// <param name="a">Phân số</param>
-		/// <returns></returns>
-		public static double Tinh_GT(PhanSo a)
-		{
-			return (float)a.tuSo / a.mauSo;
-		}
+	/// <summary>
+	/// Trả về giá trị của phân số	
+	/// </summary>
+	/// <param name="a">Phân số</param>
+	/// <returns></returns>
+	public static float Tinh_GT(PhanSo a)
+	{
+		return (float)a.tuSo / a.mauSo;
+	}
 
         /// <summary>
         /// Hàm sắp xếp mảng theo chiều tăng

@@ -204,15 +204,11 @@ namespace QuanLyPhanSo
 			return (a.tuSo == b.tuSo);
 		}
 
-		public override bool Equals(PhanSo a)
-		{
-			return (this == a);
-		}
-
 		public static bool operator !=(PhanSo a, PhanSo b)
 		{
-			QuyDong(a, b);
-			return (a.tuSo != b.tuSo);
+			//QuyDong(a, b);
+			//return (a.tuSo != b.tuSo);
+			return !(a == b);
 		}
 
 		public static bool operator >(PhanSo a, PhanSo b)
@@ -225,6 +221,33 @@ namespace QuanLyPhanSo
 		{
 			QuyDong(a, b);
 			return (a.tuSo < b.tuSo);
+		}
+
+		public static bool operator >=(PhanSo a, PhanSo b)
+		{
+			return (a > b || a == b);
+		}
+
+		public static bool operator <=(PhanSo a, PhanSo b)
+		{
+			return (a < b || a == b);
+		}
+
+		public static PhanSo operator ++(PhanSo a)
+		{
+			PhanSo one = new PhanSo(1);
+			return (a + one);
+		}
+
+		public static PhanSo operator --(PhanSo a)
+		{
+			PhanSo one = new PhanSo(1);
+			return a - one;
+		}
+
+		public static explicit operator float(PhanSo a)
+		{
+			return (float)a.tuSo / a.mauSo;
 		}
 	}
 }

@@ -16,6 +16,7 @@ namespace QuanLyPhanSo
 			Xoa_GiongDau, Xoa_GiongCuoi, Xoa_Min, Xoa_NhieuVT, Chen_VT, Chen_Dau, Xoa_Am, Xoa_Duong,
 			SapXep
 		}
+
 		static void Main(string[] args)
 		{
 			MangPhanSo ds = new MangPhanSo();
